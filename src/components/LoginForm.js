@@ -6,7 +6,7 @@ class LoginForm extends Component {
 
 // **** https://stackoverflow.com/questions/29244731/react-router-how-to-manually-invoke-link ****
 
-// **** https://github.com/reactjs/redux/issues/227 ****
+// **** https://github.com/reactjs/redux/issues/227 **** 
 
 // **** https://moduscreate.com/reactjs-form-validation-approaches/ ****
 
