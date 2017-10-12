@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import LoginButtons from './components/LoginButtons';
+import LoginButtons from './LoginButtons';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 class Nav extends Component {
 constructor(){
@@ -19,11 +20,19 @@ loggedIn(){
       console.log(err)
     })
 }
+
+componentWillMount(){
+  this.loggedIn()
+}
+
+componentDidMount(){
+  this.loggedIn()
+}
   render(){
     return (
       <nav>
         <Link to="/" >Home</Link>
-        <LoginButtons isLoggedIn={} />
+        <LoginButtons isLoggedIn={this.state.isLoggedIn} />
       </nav>
     )
   }

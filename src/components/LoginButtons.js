@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import axios from 'axios';
 
 class LoginButtons extends Component {
@@ -30,10 +30,11 @@ class LoginButtons extends Component {
         </div>
       )
     }else{
+      console.log(this.props.match)
       return (
         <div>
-          <Link to="/Login"><button>login</button></Link>
-          <Link to="/Sign-Up"><button>sign-up</button></Link>
+          <Link to={`${this.props.match.url}login`}><button>login</button></Link>
+          <Link to={`${this.props.match.url}/sign-up`}><button>sign-up</button></Link>
         </div>
       )
     }
@@ -49,6 +50,7 @@ class LoginButtons extends Component {
       })
   }
   render(){
+    console.log(this.props.match)
     return (
       <div className="LoginButtons">
         <p>Hi Im LoginButtons</p>
@@ -58,4 +60,4 @@ class LoginButtons extends Component {
   }
 }
 
-export default LoginButtons;
+export default withRouter(LoginButtons);

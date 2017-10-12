@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 class LoginForm extends Component {
 
@@ -16,14 +18,15 @@ class LoginForm extends Component {
       Password: this.refs.password
     })
     .then((response) => {
-      history.push('/')
+      this.props.history.push('/');
     })
     .catch((err) => {
-      console.log(err)
+      console.log(err);
     })
   }
 
   render() {
+    console.log('LoginForm render');
     return(
       <div className="LoginForm">
         <form onSubmit={this.handleLogin()}>
@@ -42,4 +45,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

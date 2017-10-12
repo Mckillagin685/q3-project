@@ -5,13 +5,17 @@ class Footer extends Component {
   render(){
     return (
       <div className="Footer">
-        <Footer>
-          <Link to='/home' />
-          <Link to='/posts' />
-          <Link to='/about' />
-          <Link to='/contact' />
-          <Link to='/support' />
-        </Footer>
+        <footer>
+          <Link to='/home'>Home</Link>
+          <br />
+          <Link to='/posts'>Posts</Link>
+          <br />
+          <Link to='/about'>About</Link>
+          <br />
+          <Link to='/contact'>Contact us</Link>
+          <br />
+          <Link to='/support'>Support</Link>
+        </footer>
       </div>
     )
   }

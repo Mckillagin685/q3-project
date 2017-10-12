@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 class Contact extends Component {
   render(){

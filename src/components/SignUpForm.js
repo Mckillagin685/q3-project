@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 
 class SignUpForm extends Component {
 
@@ -10,14 +11,16 @@ class SignUpForm extends Component {
 
   handleSignUp(e){
     e.preventDefault();
-    // axios.post("/user", {
-    //   Email: this.refs.email,
-    //   Password: this.refs.password
-    // })
-    // .then(response => response)
-    // .catch((err) => {
-    //   console.log(err)
-    // })
+    axios.post("/user", {
+      Email: this.refs.email,
+      Password: this.refs.password
+    })
+    .then(() => {
+      this.props.history.push('/')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 
   render() {
@@ -52,4 +55,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);
