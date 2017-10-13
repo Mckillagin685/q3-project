@@ -9,6 +9,9 @@ import Home from './pages/Home'
 import axios from 'axios';
 import './index.css';
 
+// heroku deployment
+// **** https://gist.github.com/mars/5e01bb2a074594b44870cb087f54fe2f ***
+
 // Style options
 // **** https://hackernoon.com/the-coolest-react-ui-frameworks-for-your-new-react-app-ad699fffd651 ****
 
