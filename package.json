@@ -31,7 +31,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "knex": "knex",
-    "heroku-postbuild": "knex migrate:latest"
+    "heroku-postbuild": "knex migrate:latest",
+    "nf": "nf start",
+    "nodemon": "nodemon server.js"
   },
   "devDependencies": {
     "dotenv": "^4.0.0",
