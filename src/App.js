@@ -6,9 +6,6 @@ import {BrowserRouter, Link, Route} from 'react-router-dom';
 // import BBCTop from './components/BBCTop'
 // import LoginButtons from './components/LoginButtons'
 import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Support from './pages/Support';
 import axios from 'axios';
 import './index.css';
 
@@ -22,41 +19,9 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      Threads: [],
-      Posts: [],
-      Comments: [],
+
     }
   }
-
-  // getThreads(){
-  //   axios.get('/threads')
-  //   .then((response) => {
-  //     this.setState({Threads: response.data})
-  //   })
-  //   .catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
-
-  // getPosts(){
-  //   axios.get('/posts')
-  //   .then((response) => {
-  //     this.setState({Posts: response.data})
-  //   })
-  //   .catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
-
-  // getComments(){
-  //   axios.get('/comments')
-  //   .then((response) => {
-  //     this.setState({Comments: response.data})
-  //   })
-  //   .catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
   
   // componentWillMount(){
   //   this.getThreads();
@@ -72,10 +37,7 @@ class App extends Component {
   render() {
     const View = () => (
       <div>
-        <Route path="/" exact render={({ match }) => <Home/>}/>
-        <Route path="/about" exact render={() => <About/>}/>
-        <Route path="/contact" exact render={() => <Contact/>}/>
-        <Route path="/support" exact render={() => <Support/>}/>
+        <Route path="/" render={() => <Home/>}/>
       </div>
     )
     return (

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import {Link, withRouter} from 'react-router-dom';
 
 class ThreadItem extends Component {
 
   render() {
-    console.log
     return (      
       <li className="Thread">
-          <strong>{this.props.thread.title}</strong>
+          <Link to={`${this.props.match.url}thread/${this.props.thread.id}`}>
+            <strong>{this.props.thread.title}</strong>
+          </Link>
       </li>
     );
   }
 }
 
-export default ThreadItem;
+export default withRouter(ThreadItem);

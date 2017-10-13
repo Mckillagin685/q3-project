@@ -32,6 +32,20 @@ router.get('/posts', (req, res, next) => {
       })
 })
 
+router.get('/posts/:id', (req, res, next) => {
+  knex('posts')
+    .where('thread_id', req.params.id)
+    .then((posts) => {
+      if (!posts) {
+        return next();
+      }
+      res.send(camelizeKeys(posts))
+    })
+    .catch((err) => {
+      next(err);
+    })
+})
+
 router.get('/post/:id', (req, res, next) => {
   knex('posts')
     .where('id', req.params.id)

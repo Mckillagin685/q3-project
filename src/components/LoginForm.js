@@ -12,12 +12,18 @@ class LoginForm extends Component {
 
 // **** https://moduscreate.com/reactjs-form-validation-approaches/ ****
 
-  handleLogin(){
+  isLoggedIn(){
+    this.props.onLogin()
+  }
+
+  handleLogin(e){
+    e.preventDefault()
     axios.post("/token", {
-      Email: this.refs.email,
-      Password: this.refs.password
+      email: this.refs.email.value,
+      password: this.refs.password.value
     })
     .then((response) => {
+      this.isLoggedIn()
       this.props.history.push('/');
     })
     .catch((err) => {
@@ -26,10 +32,9 @@ class LoginForm extends Component {
   }
 
   render() {
-    console.log('LoginForm render');
     return(
       <div className="LoginForm">
-        <form onSubmit={this.handleLogin()}>
+        <form onSubmit={this.handleLogin.bind(this)}>
           <div>
             <label>Email</label>
             <input type="text" ref="email"/>

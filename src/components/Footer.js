@@ -6,15 +6,15 @@ class Footer extends Component {
     return (
       <div className="Footer">
         <footer>
-          <Link to='/home'>Home</Link>
+          <Link to='/'>Home</Link>
           <br />
-          <Link to='/posts'>Posts</Link>
+          <Link to='posts'>Posts</Link>
           <br />
-          <Link to='/about'>About</Link>
+          <Link to='about'>About</Link>
           <br />
-          <Link to='/contact'>Contact us</Link>
+          <Link to='contact'>Contact us</Link>
           <br />
-          <Link to='/support'>Support</Link>
+          <Link to='support'>Support</Link>
         </footer>
       </div>
     )

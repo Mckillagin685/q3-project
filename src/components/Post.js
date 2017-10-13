@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
 
 class Post extends Component {
   render(){
     return (
       <div className="Post">
-        <Nav/>
-        <Footer/>
+        <h2>Post Information</h2>
       </div>
     )
   }

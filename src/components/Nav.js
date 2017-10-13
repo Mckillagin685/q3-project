@@ -1,38 +1,16 @@
 import React, {Component} from 'react';
 import LoginButtons from './LoginButtons';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
 
 class Nav extends Component {
-constructor(){
-  super();
-  this.state = {
-    isLoggedIn: false
+  logout(){
+    this.props.onLogout()
   }
-}
-
-loggedIn(){
-  axios.get('/token')
-    .then((response) => {
-      this.setState({isLoggedIn: response.data})
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}
-
-componentWillMount(){
-  this.loggedIn()
-}
-
-componentDidMount(){
-  this.loggedIn()
-}
   render(){
     return (
       <nav>
         <Link to="/" >Home</Link>
-        <LoginButtons isLoggedIn={this.state.isLoggedIn} />
+        <LoginButtons isLoggedIn={this.props.isLoggedIn} firstName={this.props.firstName} onLogout={this.logout.bind(this)}/>
       </nav>
     )
   }
