@@ -31,8 +31,20 @@ app.use(cookieParser());
 
 const path = require('path');
 
-app.use(express.static(path.join('public')));
-app.use(express.static(path.join('node_modules')));
+
+switch (app.get('env')) {
+  case 'development':
+    app.use(express.static(path.join('public')));
+    app.use(express.static(path.join('node_modules')));
+    break;
+
+  case 'production':
+    app.use(express.static(path.join('build')));
+    break;
+
+  default:
+}
+
 
 const token = require('./routes/token');
 const users = require('./routes/users');
