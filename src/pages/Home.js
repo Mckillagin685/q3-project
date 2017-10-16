@@ -12,6 +12,7 @@ import Support from '../components/Support';
 import ListThreads from '../components/ListThreads';
 import Thread from '../components/Thread';
 import ListPosts from '../components/ListPosts';
+import Post from '../components/Post';
 import axios from 'axios';
 
 // *** https://stackoverflow.com/questions/29552601/how-to-set-the-defaultroute-to-another-route-in-react-router ***
@@ -109,8 +110,8 @@ class Home extends Component {
         <Route path={`${this.props.match.url}posts`} render={() => <ListPosts />}/>
         <Route path={`${this.props.match.url}login`} render={() => <LoginForm onLogin={this.handleLoggedIn.bind(this)}/>}/>
         <Route path={`${this.props.match.url}sign-up`} render={() => <SignUpForm />}/>
-        <Route path={`${this.props.match.url}thread/:threadId`} render={() => <Thread />}/>
-        {/* <Route path={`${this.props.match.url}posts/${id}`} render={() => <ListPosts post={id}/>}/> */}
+        <Route exact path={`${this.props.match.url}thread/:threadId`} render={() => <Thread />}/>
+        <Route path={`/thread/:threadId/post/:postId`} render={() => <Post />}/>
       </div>
     )
     return (

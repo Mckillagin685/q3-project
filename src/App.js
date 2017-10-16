@@ -25,18 +25,6 @@ class App extends Component {
 
     }
   }
-  
-  // componentWillMount(){
-  //   this.getThreads();
-  //   this.getPosts();
-  //   this.getComments();
-  // }
-
-  // componentDidMount(){
-  //   this.getThreads();
-  //   this.getPosts();
-  //   this.getComments();
-  // }
   render() {
     const View = () => (
       <div>

@@ -20,4 +20,18 @@ router.get('/comments', (req, res, next) => {
       })
 })
 
+router.get('/comments/:id', (req, res, next) => {
+  knex('comments')
+    .where('post_id', req.params.id)
+    .then((comments) => {
+      if (!comments) {
+        return next();
+      }
+      res.send(camelizeKeys(comments))
+    })
+    .catch((err) => {
+      next(err);
+    })
+})
+
 module.exports = router;
